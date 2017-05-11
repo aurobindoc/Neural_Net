@@ -39,7 +39,29 @@ void create_training_data_add(string file_name, int length)	{
 	myfile<<"topology: 3 3 3"<<endl;
 
 	/* Add training data to the Neural Net */
-	for (int i = 0; i < length/4; ++i) {
+	for (int i = 0; i < length/8; ++i) {
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
+		myfile<<"in: 0.0 0.0 0.0"<<endl;
+		myfile<<"out: 0.0 0.0 1.0"<<endl;
 		myfile<<"in: 0.0 0.0 0.0"<<endl;
 		myfile<<"out: 0.0 0.0 1.0"<<endl;
 		myfile<<"in: 0.0 0.0 1.0"<<endl;
@@ -54,6 +76,46 @@ void create_training_data_add(string file_name, int length)	{
 		myfile<<"out: 1.0 1.0 0.0"<<endl;
 		myfile<<"in: 1.0 1.0 0.0"<<endl;
 		myfile<<"out: 1.0 1.0 1.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
+		myfile<<"in: 1.0 1.0 1.0"<<endl;
+		myfile<<"out: 0.0 0.0 0.0"<<endl;
 		myfile<<"in: 1.0 1.0 1.0"<<endl;
 		myfile<<"out: 0.0 0.0 0.0"<<endl;
 	}
@@ -72,14 +134,23 @@ void showVectorVals(const string& prefix, const vector<double> &values)
     cout << endl;
 }
 
+void showVectorValsTest(const string& prefix, const vector<double> &values)
+{
+    cout << prefix << " ";
+    for (int i = 0; i < values.size(); ++i)
+        cout << (int)round(values[i]) << " ";
+
+    cout << endl;
+}
+
 
 int main()
 {
-	 create_training_data_xor("train_data_xor.txt", 2000);
-//	create_training_data_add("train_data_add.txt", 2000);
+//	 create_training_data_xor("train_data_xor.txt", 2000);
+	create_training_data_add("train_data_add.txt", 500000);
 	cout<<endl<<"#================ STARTING TRAINING ================#"<<endl;
 
-    Trainer trainData("train_data.txt");
+    Trainer trainData("train_data_add.txt");
 
     vector<int> topology;
     trainData.get_topology(topology);
@@ -121,7 +192,7 @@ int main()
 
     cout<<endl<<"#================ STARTING TEST ================#"<<endl;
 
-	int test_arr[4][2] = { {0,0}, {0,1}, {1,0}, {1,1} };
+	/*int test_arr[4][2] = { {0,0}, {0,1}, {1,0}, {1,1} };
 
 	for (int i = 0; i < 4; ++i)
 	{
@@ -134,6 +205,24 @@ int main()
 
 		showVectorVals("Inputs:", input_vals);
 		showVectorVals("Outputs:", result_vals);
+
+		cout << endl;
+	}*/
+
+    int test_arr[8][3] = { {0,0,0}, {0,0,1}, {0,1,0}, {0,1,1}, {1,0,0}, {1,0,1}, {1,1,0}, {1,1,1} };
+
+	for (int i = 0; i < 8; ++i)
+	{
+		input_vals.clear();
+		input_vals.push_back(test_arr[i][0]);
+		input_vals.push_back(test_arr[i][1]);
+		input_vals.push_back(test_arr[i][2]);
+
+		myNet.feed_forward(input_vals);
+		myNet.get_results(result_vals);
+
+		showVectorValsTest("Inputs:", input_vals);
+		showVectorValsTest("Outputs:", result_vals);
 
 		cout << endl;
 	}

@@ -7,7 +7,7 @@ using namespace std;
 
 typedef vector<Neuron> layers;
 
-double Neuron::eta = 0.15;
+double Neuron::eta = 0.2;
 double Neuron::alpha = 0.5;
 
 Neuron::Neuron(int num_outputs, int ind)	{
